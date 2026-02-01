@@ -13,7 +13,21 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "preserve",
+    "baseUrl": "./",
+    "paths": {
+      // Root
+      "@app/*": ["./src/app/*"],
+
+      "@auth/*": ["./src/app/auth/*"],
+      "@auth/data/*": ["./src/app/auth/data/*"],
+      "@auth/model/*": ["./src/app/auth/model/*"],
+      "@auth/login/*": ["./src/app/auth/feature/login/*"],
+      "@auth/create-account/*": ["./src/app/auth/feature/create-account/*"],
+
+      // Shared - FIXED: Added @ prefix, /* wildcard, and array format
+      "@shared/*": ["./src/app/shared/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -29,5 +43,5 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ]
+  ],
 }

@@ -1,4 +1,4 @@
-import {sharedData} from '../../shared/model';
+import {sharedData} from '@shared/model';
 
 export const authDataAccessService = 'authDataAccessService';
 

@@ -1,20 +1,19 @@
 import {sameTag, SheriffConfig} from '@softarc/sheriff-core';
-
-/**
-  * Minimal configuration for Sheriff
-  * Assigns the 'noTag' tag to all modules and
-  * allows all modules to depend on each other.
-  */
+//
+//
 
 export const config: SheriffConfig = {
   entryFile: 'src/main.ts',
   enableBarrelLess: true,
+  // old by me
   modules: {
     // Root level
     'src/app': {
       auth: {
-        'feature/login': ['domain:auth-login', 'type:feature'],
-        'feature/create-account': ['domain:auth-create-account', 'type:feature'],
+        // 'feature/login': ['domain:auth-login', 'type:feature'],
+        // 'feature/create-account': ['domain:auth-create-account', 'type:feature'],
+        // shortcut for above
+        'feature/<type>': ['domain:auth-<type>', 'type:feature'],
         '<type>': ['domain:auth', 'type:<type>']
       },
       shared: {
