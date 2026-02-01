@@ -24,11 +24,11 @@ export const config: SheriffConfig = {
   },
   depRules: {
     root: ['type:feature'],
-    'domain:auth': ['type:shared'],
-    'domain:auth-login': ['type:shared'],
-    'domain:auth-create-account': ['type:shared', 'domain:ui'],
+    'domain:auth': ['domain:shared'],
+    'domain:auth-login': ['domain:shared', 'type:ui'],
+    'domain:auth-create-account': ['domain:shared', 'type:ui'],
     'domain:shared': [sameTag],
     'type:data': ['type:data', 'type:model'],
-    'type:feature': ['type:data', 'type:model', 'type:shared', 'domain:ui'],
+    'type:feature': ['type:data', 'type:model', 'domain:shared', 'type:ui'],
   },
 };
